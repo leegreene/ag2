@@ -1,0 +1,96 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SourceGenerator/AutoGen.SourceGenerator.csproj": {}
+  },
+  "projects": {
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SourceGenerator/AutoGen.SourceGenerator.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SourceGenerator/AutoGen.SourceGenerator.csproj",
+        "projectName": "AutoGen.SourceGenerator",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SourceGenerator/AutoGen.SourceGenerator.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SourceGenerator/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104",
+            "NU5128"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.CodeAnalysis.CSharp.Workspaces": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[13.0.1, )",
+              "generatePathProperty": true
+            },
+            "System.CodeDom": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

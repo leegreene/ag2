@@ -1,0 +1,2313 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.SemanticKernel.Tests/AutoGen.SemanticKernel.Tests.csproj": {}
+  },
+  "projects": {
+    "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/AutoGen.BasicSample.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/AutoGen.BasicSample.csproj",
+        "projectName": "AutoGen.BasicSample",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/AutoGen.BasicSample.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/AutoGen.DotnetInteractive.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/AutoGen.DotnetInteractive.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Microsoft.SemanticKernel.Plugins.Web": {
+              "target": "Package",
+              "version": "[1.15.1-alpha, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj",
+        "projectName": "AutoGen.Anthropic",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj",
+        "projectName": "AutoGen.AzureAIInference",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.AI.Inference": {
+              "target": "Package",
+              "version": "[1.0.0-beta.1, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.AI.Inference": {
+              "target": "Package",
+              "version": "[1.0.0-beta.1, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Azure.AI.Inference": {
+              "target": "Package",
+              "version": "[1.0.0-beta.1, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj",
+        "projectName": "AutoGen.Core",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "JsonSchema.Net.Generation": {
+              "target": "Package",
+              "version": "[4.3.0.2, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Memory.Data": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "JsonSchema.Net.Generation": {
+              "target": "Package",
+              "version": "[4.3.0.2, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Memory.Data": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "JsonSchema.Net.Generation": {
+              "target": "Package",
+              "version": "[4.3.0.2, )"
+            },
+            "Microsoft.Bcl.AsyncInterfaces": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Memory.Data": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/AutoGen.DotnetInteractive.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/AutoGen.DotnetInteractive.csproj",
+        "projectName": "AutoGen.DotnetInteractive",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/AutoGen.DotnetInteractive.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.DotnetInteractive/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.DotNet.Interactive": {
+              "target": "Package",
+              "version": "[1.0.0-beta.24229.4, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.DotNet.Interactive": {
+              "target": "Package",
+              "version": "[1.0.0-beta.24229.4, )"
+            },
+            "Microsoft.DotNet.Interactive.Jupyter": {
+              "target": "Package",
+              "version": "[1.0.0-beta.24229.4, )"
+            },
+            "Microsoft.DotNet.Interactive.PackageManagement": {
+              "target": "Package",
+              "version": "[1.0.0-beta.24229.4, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.DotNet.Interactive": {
+              "target": "Package",
+              "version": "[1.0.0-beta.24229.4, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj",
+        "projectName": "AutoGen.Gemini",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Google.Cloud.AIPlatform.V1": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Google.Cloud.AIPlatform.V1": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Google.Cloud.AIPlatform.V1": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj",
+        "projectName": "AutoGen.LMStudio",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj",
+        "projectName": "AutoGen.Mistral",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj",
+        "projectName": "AutoGen.Ollama",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj",
+        "projectName": "AutoGen.OpenAI.V1",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[1.0.0-beta.17, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[1.0.0-beta.17, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[1.0.0-beta.17, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj",
+        "projectName": "AutoGen.SemanticKernel",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.15.1, )"
+            },
+            "Microsoft.SemanticKernel.Agents.Core": {
+              "target": "Package",
+              "version": "[1.15.1-alpha, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.15.1, )"
+            },
+            "Microsoft.SemanticKernel.Agents.Core": {
+              "target": "Package",
+              "version": "[1.15.1-alpha, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SemanticKernel": {
+              "target": "Package",
+              "version": "[1.15.1, )"
+            },
+            "Microsoft.SemanticKernel.Agents.Core": {
+              "target": "Package",
+              "version": "[1.15.1-alpha, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj",
+        "projectName": "AutoGen",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net8.0",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj"
+              }
+            }
+          },
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.AzureAIInference/AutoGen.AzureAIInference.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Gemini/AutoGen.Gemini.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.LMStudio/AutoGen.LMStudio.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Mistral/AutoGen.Mistral.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Ollama/AutoGen.Ollama.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.OpenAI.V1/AutoGen.OpenAI.V1.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        },
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.SemanticKernel.Tests/AutoGen.SemanticKernel.Tests.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.SemanticKernel.Tests/AutoGen.SemanticKernel.Tests.csproj",
+        "projectName": "AutoGen.SemanticKernel.Tests",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.SemanticKernel.Tests/AutoGen.SemanticKernel.Tests.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.SemanticKernel.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.SemanticKernel/AutoGen.SemanticKernel.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/AutoGen.Tests.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/AutoGen.Tests.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ApprovalTests": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.console": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/AutoGen.Tests.Share.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/AutoGen.Tests.Share.csproj",
+        "projectName": "AutoGen.Tests.Share",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/AutoGen.Tests.Share.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Core/AutoGen.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ApprovalTests": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.console": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/AutoGen.Tests.csproj": {
+      "version": "0.1.0",
+      "restore": {
+        "projectUniqueName": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/AutoGen.Tests.csproj",
+        "projectName": "AutoGen.Tests",
+        "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/AutoGen.Tests.csproj",
+        "packagesPath": "/Users/leegreene/.nuget/packages/",
+        "outputPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Tests/obj/",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "/Users/leegreene/Documents/Development/ag2/dotnet/NuGet.Config",
+          "/Users/leegreene/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/AutoGen.BasicSample.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/sample/AutoGen.BasicSamples/AutoGen.BasicSample.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen.Anthropic/AutoGen.Anthropic.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/src/AutoGen/AutoGen.csproj"
+              },
+              "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/AutoGen.Tests.Share.csproj": {
+                "projectPath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.Test.Share/AutoGen.Tests.Share.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5104"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "ApprovalTests": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.7.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.70, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.console": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

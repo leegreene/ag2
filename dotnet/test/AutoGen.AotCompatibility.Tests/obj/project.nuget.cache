@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "KrvMKgRTMIU=",
+  "success": true,
+  "projectFilePath": "/Users/leegreene/Documents/Development/ag2/dotnet/test/AutoGen.AotCompatibility.Tests/AutoGen.AotCompatibility.Tests.csproj",
+  "expectedPackageFiles": [
+    "/Users/leegreene/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/json.more.net/2.0.0/json.more.net.2.0.0.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/jsonpointer.net/4.0.0/jsonpointer.net.4.0.0.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/jsonschema.net/6.1.0.1/jsonschema.net.6.1.0.1.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/jsonschema.net.generation/4.3.0.2/jsonschema.net.generation.4.3.0.2.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/microsoft.dotnet.ilcompiler/8.0.8/microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/microsoft.net.illink.tasks/8.0.8/microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/runtime.osx-arm64.microsoft.dotnet.ilcompiler/8.0.8/runtime.osx-arm64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/system.memory.data/8.0.0/system.memory.data.8.0.0.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/system.text.json/8.0.0/system.text.json.8.0.0.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/microsoft.netcore.app.runtime.osx-arm64/8.0.8/microsoft.netcore.app.runtime.osx-arm64.8.0.8.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/microsoft.aspnetcore.app.runtime.osx-arm64/8.0.8/microsoft.aspnetcore.app.runtime.osx-arm64.8.0.8.nupkg.sha512",
+    "/Users/leegreene/.nuget/packages/runtime.osx-arm64.microsoft.dotnet.ilcompiler/8.0.8/runtime.osx-arm64.microsoft.dotnet.ilcompiler.8.0.8.nupkg.sha512"
+  ],
+  "logs": []
+}
