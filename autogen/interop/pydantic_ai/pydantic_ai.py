@@ -10,11 +10,16 @@ from inspect import signature
 from typing import Any, Callable, Optional
 
 from ...doc_utils import export_module
-from ...import_utils import optional_import_block
+from ...import_utils import optional_import_block, require_optional_import
+from ...tools import Tool
 from ..registry import register_interoperable_class
-from .pydantic_ai_tool import PydanticAITool as AG2PydanticAITool
 
 __all__ = ["PydanticAIInteroperability"]
+
+with optional_import_block():
+    from pydantic_ai import RunContext
+    from pydantic_ai.tools import Tool as PydanticAITool
+    from pydantic_ai.usage import Usage
 
 
 @register_interoperable_class("pydanticai")
@@ -30,6 +35,7 @@ class PydanticAIInteroperability:
     """
 
     @staticmethod
+    @require_optional_import("pydantic_ai", "interop-pydantic-ai")
     def inject_params(
         ctx: Any,
         tool: Any,
@@ -49,11 +55,8 @@ class PydanticAIInteroperability:
         Raises:
             ValueError: If the tool fails after the maximum number of retries.
         """
-        from pydantic_ai import RunContext
-        from pydantic_ai.tools import Tool as PydanticAITool
-
-        ctx_typed: Optional[RunContext[Any]] = ctx  # type: ignore
-        tool_typed: PydanticAITool[Any] = tool  # type: ignore
+        ctx_typed: Optional[RunContext[Any]] = ctx  # type: ignore[no-any-unimported]
+        tool_typed: PydanticAITool[Any] = tool  # type: ignore[no-any-unimported]
 
         max_retries = tool_typed.max_retries if tool_typed.max_retries is not None else 1
         f = tool_typed.function
@@ -88,7 +91,8 @@ class PydanticAIInteroperability:
         return wrapper
 
     @classmethod
-    def convert_tool(cls, tool: Any, deps: Any = None, **kwargs: Any) -> AG2PydanticAITool:
+    @require_optional_import("pydantic_ai", "interop-pydantic-ai")
+    def convert_tool(cls, tool: Any, deps: Any = None, **kwargs: Any) -> Tool:
         """Converts a given Pydantic AI tool into a general `Tool` format.
 
         This method verifies that the provided tool is a valid `PydanticAITool`,
@@ -101,17 +105,13 @@ class PydanticAIInteroperability:
             **kwargs (Any): Additional arguments that are not used in this method.
 
         Returns:
-            AG2PydanticAITool: A standardized `Tool` object converted from the Pydantic AI tool.
+            Tool: A standardized `Tool` object converted from the Pydantic AI tool.
 
         Raises:
             ValueError: If the provided tool is not an instance of `PydanticAITool`, or if
                         dependencies are missing for tools that require a context.
             UserWarning: If the `deps` argument is provided for a tool that does not take a context.
         """
-        from pydantic_ai import RunContext
-        from pydantic_ai.tools import Tool as PydanticAITool
-        from pydantic_ai.usage import Usage
-
         if not isinstance(tool, PydanticAITool):
             raise ValueError(f"Expected an instance of `pydantic_ai.tools.Tool`, got {type(tool)}")
 
@@ -147,10 +147,10 @@ class PydanticAIInteroperability:
             tool=pydantic_ai_tool,
         )
 
-        return AG2PydanticAITool(
+        return Tool(
             name=pydantic_ai_tool.name,
             description=pydantic_ai_tool.description,
-            func=func,
+            func_or_tool=func,
             parameters_json_schema=pydantic_ai_tool._parameters_json_schema,
         )
 

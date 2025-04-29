@@ -7,14 +7,12 @@ on:
   schedule:
     - cron: "0 0 * * *" # daily at midnight UTC
   workflow_dispatch: # allows manual triggering of the workflow
-  pull_request:
-    branches: ["main"]
-  merge_group:
-    types: [checks_requested]
+  # pull_request:
+  #   branches: ["main"]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: true
 permissions: {}
 
 jobs:
@@ -64,6 +62,7 @@ jobs:
           - "commsagent-slack"
           - "commsagent-telegram"
           - "jupyter-executor"
+          - "rag"
           - "retrievechat"
           - "retrievechat-pgvector"
           - "retrievechat-mongodb"
@@ -74,6 +73,13 @@ jobs:
           - "interop"
           - "crawl4ai"
           - "docs"
+          - "interop-crewai"
+          - "interop-langchain"
+          - "interop-pydantic-ai"
+          - "mcp"
+          - "websockets"
+          - "google-api"
+          - "wikipedia-api"
         os: [ubuntu-latest, macos-latest, windows-latest]
         # Run tests only for py versions 3.9, 3.10, 3.13
         python-version: ["3.9", "3.10", "3.13"]
@@ -113,6 +119,13 @@ jobs:
           - os: windows-latest
             python-version: "3.13"
             optional-dependencies: "retrievechat-mongodb"
+          # Skip RAG tests on macOS and Windows with Python 3.13 due to issues with dependencies like PyTorch and sentence_transformers
+          - os: macos-latest
+            python-version: "3.13"
+            optional-dependencies: "rag"
+          - os: windows-latest
+            python-version: "3.13"
+            optional-dependencies: "rag"
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v5
@@ -124,7 +137,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install packages and dependencies
         run: |
-          uv pip install --system -e .[test,${{ matrix.optional-dependencies }}]
+          uv pip install --system -e .[test,openai,${{ matrix.optional-dependencies }}]
       - name: Set AUTOGEN_USE_DOCKER based on OS
         shell: bash
         run: |
@@ -144,7 +157,9 @@ jobs:
         run: |
           OPTIONAL_DEPENDENCIES="${{ matrix.optional-dependencies }}"
           MARKER="${OPTIONAL_DEPENDENCIES//-/_}"
-          bash scripts/test-skip-llm.sh -m "$MARKER"
+          # openai mark actually means that we need OpenAI API key, not just the package installed
+          echo pytest -m "(not (openai or openai_realtime or gemini or gemini_realtime or anthropic or deepseek or ollama or bedrock or cerebras) and ($MARKER))"
+          pytest -m "(not (openai or openai_realtime or gemini or gemini_realtime or anthropic or deepseek or ollama or bedrock or cerebras) and ($MARKER))"
       - name: Show coverage report
         run: bash scripts/show-coverage-report.sh
       - name: Upload coverage to Codecov
@@ -152,7 +167,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage.xml
-          flags: ${{ matrix.optional-dependencies }}, ${{ matrix.os }}, ${{ matrix.python-version }}
+          flags: optional-deps, ${{ matrix.optional-dependencies }}, ${{ matrix.os }}, ${{ matrix.python-version }}
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
 

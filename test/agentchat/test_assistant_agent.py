@@ -11,6 +11,7 @@ import os
 import pytest
 
 from autogen.agentchat import AssistantAgent, UserProxyAgent
+from autogen.import_utils import run_for_optional_imports
 from autogen.tools import tool
 
 from ..conftest import Credentials, credentials_all_llms, suppress_gemini_resource_exhausted
@@ -64,7 +65,7 @@ def test_ai_user_proxy_agent(
     _test_ai_user_proxy_agent(credentials_from_test_param)
 
 
-@pytest.mark.openai
+@run_for_optional_imports("openai", "openai")
 def test_gpt4omini(credentials_gpt_4o_mini: Credentials, human_input_mode="NEVER", max_consecutive_auto_reply=5):
     config_list = credentials_gpt_4o_mini.config_list
     llm_config = {
@@ -104,7 +105,7 @@ If "Thank you" or "You\'re welcome" are said in the conversation, then say TERMI
     assert not isinstance(user.use_docker, bool)  # None or str
 
 
-@pytest.mark.openai
+@run_for_optional_imports("openai", "openai")
 def test_create_execute_script(
     credentials_gpt_4o_mini: Credentials, human_input_mode="NEVER", max_consecutive_auto_reply=3
 ):
@@ -155,7 +156,7 @@ print('Hello world!')
     # autogen.ChatCompletion.stop_logging()
 
 
-@pytest.mark.openai
+@run_for_optional_imports("openai", "openai")
 def test_tsp(credentials_gpt_4o_mini: Credentials, human_input_mode="NEVER", max_consecutive_auto_reply=2):
     config_list = credentials_gpt_4o_mini.config_list
     hard_questions = [
@@ -190,7 +191,7 @@ def test_tsp(credentials_gpt_4o_mini: Credentials, human_input_mode="NEVER", max
     print(chat_res.cost)
 
 
-@pytest.mark.openai
+@run_for_optional_imports("openai", "openai")
 def test_standalone(credentials_gpt_4o_mini: Credentials):
     config_list = credentials_gpt_4o_mini.config_list
 
@@ -200,17 +201,19 @@ def test_standalone(credentials_gpt_4o_mini: Credentials):
     def get_twitter_hot_topic() -> str:
         return "Hot topic of the day on Twitter is #AI, and an influencer who is talking about it is @elonmusk"
 
-    hot_topic_res = x_assistant.run(
-        "Find out today's hot topic and an influencer who is talking about it on X",
+    response = x_assistant.run(
+        message="Find out today's hot topic and an influencer who is talking about it on X",
         tools=get_twitter_hot_topic,
         user_input=False,
     )
 
-    assert "AI" in hot_topic_res.summary
-    assert "elonmusk" in hot_topic_res.summary
+    response.process()
+
+    assert "AI" in response.summary
+    assert "elonmusk" in response.summary
 
 
-@pytest.mark.openai
+@run_for_optional_imports("openai", "openai")
 @pytest.mark.asyncio
 async def test_standalone_async(credentials_gpt_4o_mini: Credentials):
     config_list = credentials_gpt_4o_mini.config_list
@@ -221,14 +224,15 @@ async def test_standalone_async(credentials_gpt_4o_mini: Credentials):
     def get_twitter_hot_topic() -> str:
         return "Hot topic of the day on Twitter is #AI, and an influencer who is talking about it is @elonmusk"
 
-    hot_topic_res = await x_assistant.a_run(
-        "Find out today's hot topic and an influencer who is talking about it on X",
+    response = await x_assistant.a_run(
+        message="Find out today's hot topic and an influencer who is talking about it on X",
         tools=get_twitter_hot_topic,
         user_input=False,
     )
 
-    assert "AI" in hot_topic_res.summary
-    assert "elonmusk" in hot_topic_res.summary
+    await response.process()
+    assert "AI" in await response.summary
+    assert "elonmusk" in await response.summary
 
 
 if __name__ == "__main__":

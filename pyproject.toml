@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [metadata]
 license_file = "LICENSE"
-description-file = "README.md"
+description_file = "README.md"
 
 [project]
 name = "pyautogen"
@@ -51,19 +51,18 @@ classifiers = [
 ]
 
 dependencies = [
-    "openai>=1.58",
     "diskcache",
     "termcolor",
     "python-dotenv",
     "tiktoken",
-    "numpy",
     # Disallowing 2.6.0 can be removed when this is fixed https://github.com/pydantic/pydantic/issues/8705
     "pydantic>=2.6.1,<3",
     "docker",
     "packaging",
-    "websockets>=14,<15",
     "asyncer==0.0.8",
-    "fast_depends>=2.4.12,<3",
+#    "fast-depends>=2.4.12,<3",  # integrated into the package
+    "httpx>=0.28.1,<1",
+    "anyio>=3.0.0,<5.0.0"  # needed by the internal fast-depends
 ]
 
 [project.optional-dependencies]
@@ -76,6 +75,16 @@ flaml = [
 ]
 
 # public distributions
+
+openai = [
+    "openai>=1.66.2",
+]
+
+openai-realtime = [
+    "pyautogen[openai]",
+    "openai[realtime]",
+]
+
 jupyter-executor = [
     "jupyter-kernel-gateway",
     "websocket-client",
@@ -87,7 +96,7 @@ jupyter-executor = [
 retrievechat = [
     "protobuf==5.29.3",
     "chromadb==0.6.3",
-    "sentence_transformers",
+    "sentence_transformers<=4.1.0",
     "pypdf",
     "ipython",
     "beautifulsoup4",
@@ -104,6 +113,7 @@ retrievechat-pgvector = [
 retrievechat-mongodb = [
     "pyautogen[retrievechat]",
     "pymongo>=4.0.0",
+    "numpy",
 ]
 
 retrievechat-qdrant = [
@@ -115,10 +125,11 @@ retrievechat-qdrant = [
 retrievechat-couchbase = [
     "pyautogen[retrievechat]",
     "couchbase>=4.3.0",
+    "numpy",
 ]
 
 graph-rag-falkor-db = [
-    "graphrag_sdk==0.6.0",
+    "graphrag_sdk==0.7.1",
     "falkordb>=1.0.10",
 ]
 
@@ -128,6 +139,11 @@ rag = [
     "webdriver-manager==4.0.2",
     "chromadb>=0.5,<1",
     "llama-index>=0.12,<1",
+    "llama-index-vector-stores-chroma==0.4.1",
+    "llama-index-vector-stores-mongodb==0.6.0",
+    "llama-index-embeddings-huggingface==0.5.3",
+    "llama-index-llms-langchain==0.6.1",
+    "requests>=2.32.3,<3",
 ]
 
 
@@ -136,15 +152,34 @@ crawl4ai = [
 ]
 
 browser-use = [
-    "browser-use>=0.1.27,<0.2",
+    # ToDo: Restrict browser-use to a specific version
+    # browser-use>0.1.38 moved langchain-google-genai, aws, etc to its dev dependencies
+    "browser-use==0.1.37",
+]
+
+google-client = [
+    "google-api-python-client>=2.163.0,<3.0",
+]
+
+google-api = [
+    "pyautogen[google-client]",
+    "google-auth-httplib2>=0.2.0,<0.3",
+    "google-auth-oauthlib>=1.2.1,<2.0",
+]
+
+google-search = [
+    "pyautogen[google-client]",
+]
+
+wikipedia = [
+    "wikipedia-api>=0.8.1, <1.0"
 ]
 
 neo4j = [
-    "docx2txt==0.8",
-    "llama-index==0.12.16",
+    "docx2txt==0.9",
+    "llama-index>=0.12,<1",
     "llama-index-graph-stores-neo4j==0.4.6",
-    "llama-index-core==0.12.16",
-    "llama-index-readers-web==0.3.5",
+    "llama-index-readers-web==0.3.9",
 ]
 
 # used for agentchat_realtime_swarm notebook and realtime agent twilio demo
@@ -154,20 +189,27 @@ twilio = [
     "twilio>=9.3.2"
 ]
 
-interop-crewai = [
-    "crewai[tools]>=0.86,<1; python_version>='3.10' and python_version<'3.13'",
-    "weaviate-client==4.10.2; python_version>='3.10' and python_version<'3.13'",
-    # crewai uses litellm, litellm introduced uvloop as deps with version 1.57.5 which does not support win32
-    "litellm<1.57.5; sys_platform=='win32'",
-]
-interop-langchain = ["langchain-community>=0.3.12,<1"]
-interop-pydantic-ai = ["pydantic-ai==0.0.23"]
-interop =[
-    "pyautogen[interop-crewai, interop-langchain, interop-pydantic-ai]",
+mcp = [
+    # mcp 1.6.0 keeps hanging in stdio_client context manager
+    # test_mcp_issue_with_stdio_client_context_manager is failing for mcp=1.6.0
+    "mcp>=1.4.0,<1.6; python_version>='3.10'"
 ]
 
-# pysqlite3-binary used so it doesn't need to compile pysqlite3
-autobuild = ["chromadb", "sentence-transformers", "huggingface-hub", "pysqlite3-binary"]
+interop-crewai = [
+    "crewai[tools]>=0.76,<1; python_version>='3.10' and python_version<'3.13'",
+    "weaviate-client>=4,<5; python_version>='3.10' and python_version<'3.13'",
+]
+interop-langchain = ["langchain-community>=0.3.12,<1"]
+interop-pydantic-ai = ["pydantic-ai==0.0.31"]
+interop =[
+    "pyautogen[interop-crewai, interop-langchain, interop-pydantic-ai]"
+]
+
+autobuild = [
+    "chromadb",
+    "sentence_transformers<=4.1.0",
+    "huggingface-hub"
+]
 
 blendsearch = ["flaml[blendsearch]"]
 mathchat = ["sympy", "wolframalpha"]
@@ -176,28 +218,35 @@ teachable = ["chromadb"]
 lmm = ["replicate", "pillow"]
 graph = ["networkx", "matplotlib"]
 gemini = [
-    "google-genai>=1.2.0,<2.0",
+    "google-api-core",
+    "google-genai>=1.2.0",
     "google-cloud-aiplatform",
     "google-auth",
     "pillow",
     "jsonschema",
-    "jsonref"
 ]
+
+gemini-realtime = [
+    "pyautogen[gemini]",
+    "pyautogen[websockets]",
+]
+
 together = ["together>=1.2"]
 websurfer = ["beautifulsoup4", "markdownify", "pdfminer.six", "pathvalidate"]
 redis = ["redis"]
 cosmosdb = ["azure-cosmos>=4.2.0"]
-websockets = ["websockets>=14.0,<15"]
+websockets = ["websockets>=14.0,<16"]
 long-context = ["llmlingua<0.3"]
 anthropic = ["anthropic[vertex]>=0.23.1"]
 cerebras = ["cerebras_cloud_sdk>=1.0.0"]
 mistral = ["mistralai>=1.0.1"]
 groq = ["groq>=0.9.0"]
-cohere = ["cohere>=5.5.8"]
-ollama = ["ollama>=0.4.5", "fix_busted_json>=0.0.18"]
+cohere = ["cohere>=5.13.5"]
+ollama = ["ollama>=0.4.7", "fix_busted_json>=0.0.18"]
 bedrock = ["boto3>=1.34.149"]
+deepseek = ["pyautogen[openai]"]
 
-commsagent-discord = ["discord.py>=2.4.0,<2.5"]
+commsagent-discord = ["discord.py>=2.4.0,<2.6"]
 commsagent-slack = ["slack_sdk>=3.33.0,<3.40"]
 commsagent-telegram = ["telethon>=1.38.1, <2"]
 
@@ -208,30 +257,44 @@ test = [
     "ipykernel==6.29.5",
     "nbconvert==7.16.6",
     "nbformat==5.10.4",
-    "pytest-cov==6.0.0",
-    "pytest-asyncio==0.25.3",
-    "pytest==8.3.4",
-    "mock==5.1.0",
+    "pytest-cov==6.1.1",
+    "pytest-asyncio==0.26.0",
+    "pytest==8.3.5",
+    "mock==5.2.0",
     "pandas==2.2.3",
-    "fastapi==0.115.8",
+    "fastapi==0.115.12",
+    "dirty-equals==0.9.0",
 ]
 
-# docs dependencies
 docs = [
-    "pdoc3==0.11.5",
-    "jinja2==3.1.5",
+    "mkdocs-material==9.6.12",
+    "mkdocstrings[python]==0.29.1",
+    "mkdocs-literate-nav==0.6.2",
+    "mdx-include==1.4.2",
+    # ToDo: currently problematic and cannot be upgraded
+    "mkdocs-git-revision-date-localized-plugin==1.3.0",
+    "mike==2.1.3",
+    "typer==0.15.2",
+    "mkdocs-minify-plugin==0.8.0",
+    "mkdocs-macros-plugin==1.3.7",  # includes with variables
+    "mkdocs-glightbox==0.4.0",  # img zoom
+    "mkdocs-redirects==1.2.2",  # required for handling redirects natively
+    "pillow",  # required for mkdocs-glightbo
+    "cairosvg",  # required for mkdocs-glightbo
+    "pdoc3==0.11.6",
+    "jinja2==3.1.6",
     "pyyaml==6.0.2",
-    "termcolor==2.5.0",
+    "termcolor==3.0.1",
     "nbclient==0.10.2",
 ]
 
 types = [
     "mypy==1.15.0",
-    "pyautogen[test, jupyter-executor, interop]",
+    "pyautogen[test, openai]",
 ]
 
 lint = [
-    "ruff==0.9.5",
+    "ruff==0.11.6",
     "codespell==2.4.1",
     "pyupgrade-directories==0.3.0",
 ]
@@ -239,15 +302,15 @@ lint = [
 dev = [
     "toml==0.10.2",
     "pyautogen[lint,test,types,docs]",
-    "pre-commit==4.1.0",
+    "pre-commit==4.2.0",
     "detect-secrets==1.5.0",
-    "uv==0.5.29",
+    "uv==0.6.14",
 ]
 
 
 [project.urls]
 Homepage = "https://ag2.ai/"
-Documentation = "https://docs.ag2.ai/docs/Home"
+Documentation = "https://docs.ag2.ai"
 Tracker = "https://github.com/ag2ai/ag2/issues"
 Source = "https://github.com/ag2ai/ag2"
 Discord = "https://discord.gg/pAbnFJrkgZ"
@@ -270,23 +333,31 @@ exclude = ["test", "notebook"]
 "autogen" = "autogen"
 "autogen/agentchat/contrib/captainagent/tools" = "autogen/agentchat/contrib/captainagent/tools"
 
-
 [tool.pytest.ini_options]
 addopts = '--cov=autogen --cov-append --cov-branch --cov-report=xml -m "not conda"'
 testpaths = [
     "test",
 ]
+
 markers = [
     "conda: test related to conda forge distribution",
     "all",
     "openai",
+    "openai_realtime",
     "gemini",
+    "gemini_realtime",
     "anthropic",
     "deepseek",
+    "cosmosdb",
+    "ollama",
+    "bedrock",
+    "cerebras",
+    "aux_neg_flag",
+    # optional deps
     "redis",
     "docker",
     "docs",
-    # optional deps
+    "rag",
     "jupyter_executor",
     "retrievechat",
     "retrievechat_pgvector",
@@ -295,9 +366,17 @@ markers = [
     "graph_rag_falkor_db",
     "neo4j",
     "twilio",
+    "mcp",
     "interop",
     "browser_use",
     "crawl4ai",
+    "google_api",
+    "google_search",
+    "websockets",
+    "commsagent_discord",
+    "commsagent_slack",
+    "commsagent-telegram",
+    "lmm",
 ]
 
 [tool.black]
@@ -354,6 +433,8 @@ select = [
 #    "UP",     # pyupgrade              https://docs.astral.sh/ruff/rules/#pydocstyle-d
 ]
 
+extend-select = ["D417"]
+
 ignore = ["E501", "F403", "C901",
     "E402",
     "E721",
@@ -379,27 +460,49 @@ convention = "google"
 
 [tool.mypy]
 files = [
-    "autogen/logger",
-    "autogen/exception_utils.py",
-    "autogen/coding",
-    "autogen/oai/openai_utils.py",
-    "autogen/io",
-    "autogen/tools",
-    "autogen/interop",
-    "autogen/agentchat/realtime_agent",
-    "autogen/messages",
-    "autogen/import_utils.py",
+    "autogen/agentchat/agent.py",
+#    "autogen/agentchat/cenversable_agent.py",
     "autogen/agentchat/contrib/rag",
+    "autogen/agentchat/contrib/graph_rag",
+    "autogen/agentchat/contrib/swarm_agent.py",
+    "autogen/agentchat/group",
+    "autogen/agentchat/realtime_agent",
+    "autogen/agentchat/utils.py",
+    "autogen/agents",
+    "autogen/coding",
+    "autogen/exception_utils.py",
+    "autogen/fast_depends",
+    "autogen/import_utils.py",
+    "autogen/interop",
+    "autogen/io",
+    "autogen/json_utils.py",
+    "autogen/llm_config.py",
+    "autogen/logger",
+    "autogen/messages",
+    "autogen/oai/gemini_types.py",
+    "autogen/oai/oai_models",
+    "autogen/oai/openai_utils.py",
+    "autogen/tools",
+    "autogen/_website",
     "website/*.py",
-    "test/io",
-    "test/tools",
-    "test/interop",
+    "test/agentchat/contrib/rag",
+    "test/agentchat/contrib/graph_rag",
+    "test/agentchat/contrib/test_swarm.py",
+    "test/agentchat/group",
     "test/agentchat/realtime_agent",
-    "test/messages",
+    "test/agents",
     "test/conftest.py",
+#    "test/fast_depends",
+    "test/interop",
+    "test/io",
+    "test/oai/test_oai_models.py",
+    "test/oai/test_gemini_types.py",
+    "test/test_json_utils.py",
+    "test/test_llm_config.py",
+    "test/messages",
     "test/test_import_utils.py",
     "test/test_import.py",
-    "test/agentchat/contrib/rag",
+    "test/tools",
     "test/website",
 ]
 
@@ -434,6 +537,6 @@ disallow_untyped_decorators = true
 disallow_any_unimported = true
 
 [tool.codespell]
-skip = "*.js,*.map,*.pdf,*.po,*.ts,*.json,*.svg,./notebook,./website/node_modules,.notebook/agentchat_microsoft_fabric.ipynb"
+skip = "*.js,*.map,*.pdf,*.po,*.ts,*.json,*.svg,./website/node_modules,.notebook/agentchat_microsoft_fabric.ipynb,./notebook/agentchat_swarm_graphrag_telemetry_trip_planner.ipynb,./notebook/agentchat_graph_rag_neo4j.ipynb"
 quiet-level = 3
 ignore-words-list = "ans,linar,nam,tread,ot,assertIn,dependin,socio-economic,ege,leapYear,fO,bu,te,ROUGE,ser,doubleClick,CNa,wOh,Hart,Empress,Chage,mane,digitalize"

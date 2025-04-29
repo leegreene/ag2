@@ -11,13 +11,11 @@ from typing import Any, Callable, Optional
 from unittest.mock import MagicMock
 from uuid import UUID
 
-import pytest
-
 import autogen
 from autogen.cache.cache import Cache
-from autogen.import_utils import optional_import_block, skip_on_missing_imports
+from autogen.events.base_event import BaseEvent, wrap_event
+from autogen.import_utils import optional_import_block, run_for_optional_imports
 from autogen.io import IOWebsockets
-from autogen.messages.base_message import BaseMessage, wrap_message
 
 from ..conftest import Credentials
 
@@ -27,8 +25,8 @@ with optional_import_block() as result:
     from websockets.sync.client import connect as ws_connect
 
 
-@wrap_message
-class TestTextMessage(BaseMessage):
+@wrap_event
+class TestTextEvent(BaseEvent):
     text: str
 
     def __init__(self, *, uuid: Optional[UUID] = None, text: str):
@@ -40,7 +38,7 @@ class TestTextMessage(BaseMessage):
         f(self.text)
 
 
-@skip_on_missing_imports(["websockets"], "websockets")
+@run_for_optional_imports(["websockets"], "websockets")
 class TestConsoleIOWithWebsockets:
     def test_input_print(self) -> None:
         print()
@@ -60,7 +58,7 @@ class TestConsoleIOWithWebsockets:
             for msg in ["Hello, World!", "Over and out!"]:
                 print(f" - on_connect(): Sending message '{msg}' to client.", flush=True)
 
-                text_message = TestTextMessage(text=msg)
+                text_message = TestTextEvent(text=msg)
                 text_message.print(iostream.print)
 
             print(" - on_connect(): Receiving message from client.", flush=True)
@@ -105,7 +103,7 @@ class TestConsoleIOWithWebsockets:
 
         print("Test passed.", flush=True)
 
-    @pytest.mark.openai
+    @run_for_optional_imports("openai", "openai")
     def test_chat(self, credentials_gpt_4o_mini: Credentials) -> None:
         print("Testing setup", flush=True)
 

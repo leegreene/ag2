@@ -21,6 +21,12 @@ class BaseMessage(BaseModel, ABC):
     uuid: UUID
 
     def __init__(self, uuid: Optional[UUID] = None, **kwargs: Any) -> None:
+        """Base message class
+
+        Args:
+            uuid (Optional[UUID], optional): Unique identifier for the message. Defaults to None.
+            **kwargs (Any): Additional keyword arguments
+        """
         uuid = uuid or uuid4()
         super().__init__(uuid=uuid, **kwargs)
 
@@ -47,7 +53,7 @@ def wrap_message(message_cls: type[BaseMessage]) -> type[BaseModel]:
     This is needed for proper serialization and deserialization of messages in a union type.
 
     Args:
-        message_cls (Type[BaseMessage]): Message class to wrap
+        message_cls (type[BaseMessage]): Message class to wrap
     """
     global _message_classes
 

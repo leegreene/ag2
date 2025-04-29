@@ -5,14 +5,19 @@
 from .browser_use import BrowserUseTool
 from .crawl4ai import Crawl4AITool
 from .deep_research import DeepResearchTool
+from .google_search import GoogleSearchTool, YoutubeSearchTool
 from .messageplatform import (
     DiscordRetrieveTool,
     DiscordSendTool,
+    SlackRetrieveRepliesTool,
     SlackRetrieveTool,
     SlackSendTool,
     TelegramRetrieveTool,
     TelegramSendTool,
 )
+from .perplexity import PerplexitySearchTool
+from .tavily import TavilySearchTool
+from .wikipedia import WikipediaPageLoadTool, WikipediaQueryRunTool
 
 __all__ = [
     "BrowserUseTool",
@@ -20,8 +25,15 @@ __all__ = [
     "DeepResearchTool",
     "DiscordRetrieveTool",
     "DiscordSendTool",
+    "GoogleSearchTool",
+    "PerplexitySearchTool",
+    "SlackRetrieveRepliesTool",
     "SlackRetrieveTool",
     "SlackSendTool",
+    "TavilySearchTool",
     "TelegramRetrieveTool",
     "TelegramSendTool",
+    "WikipediaPageLoadTool",
+    "WikipediaQueryRunTool",
+    "YoutubeSearchTool",
 ]

@@ -7,19 +7,19 @@ on:
   schedule:
     - cron: "0 0 * * *" # daily at midnight UTC
   workflow_dispatch: # allows manual triggering of the workflow
-  pull_request:
-    branches: ["main"]
-    paths:
-      - "autogen/**"
-      - "test/agentchat/contrib/**"
-      - "test/test_browser_utils.py"
-      - "test/test_retrieve_utils.py"
-      - ".github/workflows/contrib-test.yml"
-      - "pyproject.toml"
+  # pull_request:
+  #   branches: ["main"]
+  #   paths:
+  #     - "autogen/**"
+  #     - "test/agentchat/contrib/**"
+  #     - "test/test_browser_utils.py"
+  #     - "test/test_retrieve_utils.py"
+  #     - ".github/workflows/contrib-test.yml"
+  #     - "pyproject.toml"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: true
 permissions:
   {}
   # actions: read
@@ -131,7 +131,7 @@ jobs:
           uv pip install --system -e .[retrievechat-qdrant]
       - name: Install pgvector when on linux
         run: |
-          uv pip install --system -e .[test,retrievechat-pgvector,retrievechat-mongodb]
+          uv pip install --system -e .[test,retrievechat-pgvector,retrievechat-mongodb,retrievechat-qdrant,openai]
       - name: Install couchbase when on linux
         run: |
           uv pip install --system -e .[retrievechat-couchbase]
@@ -216,7 +216,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage.xml
-          flags: ${{ matrix.python-version }}, ${{ matrix.os }}
+          flags: agent-eval, ${{ matrix.python-version }}, ${{ matrix.os }}
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -255,7 +255,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage.xml
-          flags: ${{ matrix.os }}, ${{ matrix.python-version }}
+          flags: gpt-assistant-agent, ${{ matrix.os }}, ${{ matrix.python-version }}
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -357,7 +357,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install packages and dependencies for LMM
         run: |
-          uv pip install --system -e .[test,lmm]
+          uv pip install --system -e .[test,lmm,openai]
       - name: Set AUTOGEN_USE_DOCKER based on OS
         shell: bash
         run: |
@@ -394,8 +394,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -495,7 +493,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage.xml
-          flags: ${{ matrix.os }}, ${{ matrix.python-version }}
+          flags: llama-index-agent, ${{ matrix.os }}, ${{ matrix.python-version }}
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -509,8 +507,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -555,8 +551,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -599,8 +593,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -643,8 +635,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -687,8 +677,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -727,8 +715,6 @@ jobs:
         python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -771,8 +757,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -815,8 +799,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -859,8 +841,6 @@ jobs:
             python-version: "3.9"
     steps:
       - uses: actions/checkout@v4
-        with:
-          lfs: true
       - uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
@@ -887,61 +867,6 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           files: ./coverage.xml
-          flags: ${{ matrix.os }}, ${{ matrix.python-version }}
+          flags: swarm, ${{ matrix.os }}, ${{ matrix.python-version }}
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
-
-  ReasoningTest:
-      runs-on: ${{ matrix.os }}
-      strategy:
-        fail-fast: false
-        matrix:
-          os: [ubuntu-latest, macos-latest, windows-latest]
-          python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
-          exclude:
-            - os: macos-latest
-              python-version: "3.9"
-      steps:
-        - uses: actions/checkout@v4
-          with:
-            lfs: true
-        - uses: astral-sh/setup-uv@v5
-          with:
-            version: "latest"
-        - name: Set up Python ${{ matrix.python-version }}
-          uses: actions/setup-python@v5
-          with:
-            python-version: ${{ matrix.python-version }}
-        - name: Install packages and dependencies for Reasoning
-          run: |
-            uv pip install --system -e .[test]
-        - name: Install Graphviz based on OS
-          run: |
-            if [[ ${{ matrix.os }} == 'ubuntu-latest' ]]; then
-              sudo apt-get update
-              sudo apt-get install -y graphviz
-            elif [[ ${{ matrix.os }} == 'macos-latest' ]]; then
-              brew install graphviz
-            elif [[ ${{ matrix.os }} == 'windows-latest' ]]; then
-              choco install graphviz
-            fi
-          shell: bash
-        - name: Set AUTOGEN_USE_DOCKER based on OS
-          shell: bash
-          run: |
-            if [[ ${{ matrix.os }} != ubuntu-latest ]]; then
-              echo "AUTOGEN_USE_DOCKER=False" >> $GITHUB_ENV
-            fi
-        - name: Run tests
-          run: |
-            bash scripts/test-skip-llm.sh test/agentchat/contrib/test_reasoning_agent.py
-        - name: Show coverage report
-          run: bash scripts/show-coverage-report.sh
-        - name: Upload coverage to Codecov
-          if: ${{ !contains(github.ref, 'gh-readonly-queue/') }}
-          uses: codecov/codecov-action@v5
-          with:
-            files: ./coverage.xml
-            flags: ${{ matrix.os }}, ${{ matrix.python-version }}
-            fail_ci_if_error: true
-            token: ${{ secrets.CODECOV_TOKEN }}
